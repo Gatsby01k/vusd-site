@@ -1,3 +1,5 @@
+import { roadmap } from "../content/team";
+
 export default function Team() {
   return (
     <section id="team" className="section reveal">
