@@ -1206,3 +1206,71 @@ section::before {
   color: var(--neon);
 }
 
+/* === PREMIUM TOUCHES === */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(44, 245, 200, 0.4);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(229, 243, 255, 0.9);
+  background: radial-gradient(circle at top left, rgba(44, 245, 200, 0.16), rgba(5, 8, 20, 0.96));
+}
+
+.chip-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--neon);
+  box-shadow: 0 0 12px rgba(44, 245, 200, 0.9);
+}
+
+/* Полоса метрик под героем */
+
+.metrics-strip {
+  margin-top: 26px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(21, 27, 43, 0.9);
+  background: radial-gradient(circle at top, rgba(44, 245, 200, 0.18), rgba(2, 4, 10, 0.98));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.metrics-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metrics-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+}
+
+.metrics-value {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.metrics-value span {
+  color: var(--neon);
+}
+
+/* Чуть больше воздуха между секциями на больших экранах */
+
+@media (min-width: 1024px) {
+  section {
+    margin-top: 84px;
+  }
+}
+
