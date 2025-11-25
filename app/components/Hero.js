@@ -1,6 +1,7 @@
 export default function Hero() {
   return (
-    <section className="hero" id="top">
+    <section className="hero reveal" id="top">
+      {/* Левая колонка — текст + CTA */}
       <div>
         <div className="hero-kicker">PRIVATE • AI-GOVERNED • USD</div>
 
@@ -12,94 +13,78 @@ export default function Hero() {
 
         <p className="hero-text">
           VUSD combines zero-knowledge privacy, an autonomous stability engine and self-defending
-          infrastructure. The peg, risk and governance are managed by models — within
-          hard-coded on-chain constraints, not by ad-hoc human committees.
+          infrastructure. The peg, risk and governance are managed by models — within hard-coded
+          on-chain constraints, not by ad-hoc human committees.
         </p>
 
-        {/* Статус проекта */}
-        <div style={{ marginTop: 18, display: "flex", flexWrap: "wrap", gap: 10 }}>
-          <div className="chip">
-            <span className="chip-dot" />
-            <span>Prototype live — investor conversations open</span>
-          </div>
+        {/* CTA-кнопки — используют уже существующие классы btn-primary/btn-ghost */}
+        <div className="hero-cta-row">
+          <a href="#investors" className="btn-primary">
+            Talk to us
+          </a>
+          <a href="#roadmap" className="btn-ghost">
+            View progress
+          </a>
         </div>
 
-        {/* Основные selling-points */}
+        {/* Бэйджи статуса / позиционирования */}
         <div className="hero-badges">
+          <div className="badge badge-strong">
+            <span className="chip-dot" />
+            <span>Prototype live</span>
+            <span className="badge-sep">•</span>
+            <span>Investor conversations open</span>
+          </div>
+
           <div className="badge">ZK-shielded balances</div>
-          <div className="badge">Autonomous Stability Engine</div>
-          <div className="badge">AI-originated governance</div>
+          <div className="badge">Autonomous stability engine</div>
           <div className="badge">Self-defending infra</div>
         </div>
-
-        <div className="hero-cta-row">
-          <a href="/deck.pdf" className="btn-primary">
-            <span className="icon">⬇</span>
-            <span>Download investor deck</span>
-          </a>
-          <a href="#investors" className="btn-ghost">
-            Book a 30-minute call
-          </a>
-        </div>
-
-        <p className="hero-footnote">
-          Raising $5–10M from long-term funds backing privacy, cryptography-heavy protocols and
-          autonomous financial infrastructure.
-        </p>
       </div>
 
-      {/* Правая панель — оставляем, она уже классная, чуть подчищено по тексту */}
-      <aside className="hero-panel">
-        <div className="arch-lattice"></div>
+      {/* Правая колонка — панель «снэпшот системы» */}
+      <aside className="hero-panel" aria-label="System snapshot">
         <div className="panel-header">
           <div className="panel-label">SYSTEM SNAPSHOT</div>
-          <div className="panel-dots">
-            <div className="dot"></div>
-            <div className="dot" style={{ background: "rgba(255,75,129,0.7)" }}></div>
-            <div className="dot" style={{ background: "rgba(64,247,255,0.7)" }}></div>
+          <div className="panel-caption">Model-governed, constraint-bounded</div>
+        </div>
+
+        {/* Псевдо-терминал */}
+        <div className="panel-terminal">
+          <div className="terminal-line">
+            <span className="terminal-key">&gt; ase_status</span>
+            <span className="terminal-value">"ONLINE"</span>
+          </div>
+          <div className="terminal-line">
+            <span className="terminal-key">&gt; liquidity_cover</span>
+            <span className="terminal-value">1.32x</span>
+          </div>
+          <div className="terminal-line">
+            <span className="terminal-key">&gt; tail_risk</span>
+            <span className="terminal-value terminal-value-warn">"constrained"</span>
           </div>
         </div>
 
-        <div className="panel-console">
-          <div className="panel-console-line">
-            <span className="prompt">&gt;</span>
-            <span>
-              ase_status = <span style={{ color: "var(--neon)" }}>"ONLINE"</span>
-            </span>
-          </div>
-          <div className="panel-console-line">
-            <span className="prompt">&gt;</span>
-            <span>
-              liquidity_cover = <span style={{ color: "var(--neon)" }}>1.32x</span>
-            </span>
-          </div>
-          <div className="panel-console-line">
-            <span className="prompt">&gt;</span>
-            <span>
-              tail_risk = <span style={{ color: "var(--danger)" }}>"constrained"</span>
-            </span>
-          </div>
-          <div className="panel-console-line typewriter">
-            &gt; privacy_layer = ACTIVE // zk-shielded, unlinkable transfer graph
-          </div>
-        </div>
-
+        {/* Карточки по подсистемам */}
         <div className="panel-grid">
           <div className="stat-card">
             <div className="stat-label">PRIVACY</div>
             <div className="stat-value">Shielded</div>
-            <div className="stat-tag">Balances & tx graph hidden by default.</div>
+            <div className="stat-tag">Balances &amp; tx graph hidden by default.</div>
           </div>
+
           <div className="stat-card">
             <div className="stat-label">GOVERNANCE</div>
             <div className="stat-value">AI-assisted</div>
             <div className="stat-tag">Models propose, community constrains.</div>
           </div>
+
           <div className="stat-card">
             <div className="stat-label">RISK ENGINE</div>
             <div className="stat-value">Autonomous</div>
-            <div className="stat-tag">24/7 collateral & peg defence.</div>
+            <div className="stat-tag">24/7 collateral &amp; peg defence.</div>
           </div>
+
           <div className="stat-card">
             <div className="stat-label">INFRA</div>
             <div className="stat-value">Self-defending</div>
@@ -107,12 +92,15 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="hero-diagram">
-          <div className="hero-diagram-row">
-            <div className="diagram-chip">Users & Apps</div>
-            <div className="diagram-arrow"></div>
+        {/* Упрощённая диаграмма потока */}
+        <div className="panel-diagram">
+          <div className="diagram-row">
+            <div className="diagram-chip">Users &amp; Protocols</div>
+            <div className="diagram-arrow" />
+            <div className="diagram-chip">VUSD</div>
+            <div className="diagram-arrow" />
             <div className="diagram-chip">VUSD Protocol</div>
-            <div className="diagram-arrow"></div>
+            <div className="diagram-arrow" />
             <div className="diagram-chip">AI Governance</div>
           </div>
           <div className="diagram-note">
