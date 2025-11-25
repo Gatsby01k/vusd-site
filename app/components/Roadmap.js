@@ -1,3 +1,5 @@
+import Section from "./ui/Section";
+import Card from "./ui/Card";
 import { roadmap } from "../content/roadmap";
 
 export default function Roadmap() {
