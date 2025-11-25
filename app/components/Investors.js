@@ -1,3 +1,5 @@
+import { roadmap } from "../content/investors";
+
 export default function Investors() {
   return (
     <section id="investors" className="section reveal">
