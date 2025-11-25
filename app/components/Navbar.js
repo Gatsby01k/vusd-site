@@ -5,16 +5,22 @@ import { useState } from "react";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const toggle = () => setOpen((v) => !v);
+  const close = () => setOpen(false);
+
   return (
     <header className="header">
       <div className={`header-inner ${open ? "nav-open" : ""}`}>
+        {/* Логотип / бренд-зона */}
         <div className="logo-area">
-          <div className="logo-text glitch" data-text="VUSD.AI">
-            VUSD.AI
-          </div>
+          <a href="#top" className="logo-text" aria-label="VUSD home">
+            <span className="logo-main">VUSD.AI</span>
+            <span className="logo-tagline">Private • AI-governed USD</span>
+          </a>
         </div>
 
-        <nav className="nav">
+        {/* Десктоп-меню */}
+        <nav className="nav" aria-label="Main navigation">
           <a href="#why">Why now</a>
           <a href="#pillars">What we’re building</a>
           <a href="#architecture">Architecture</a>
@@ -26,39 +32,39 @@ export default function Navbar() {
           </a>
         </nav>
 
-        <div
+        {/* Бургер для мобилы */}
+        <button
+          type="button"
           className="nav-toggle"
-          onClick={() => setOpen((v) => !v)}
+          onClick={toggle}
           aria-label="Toggle navigation"
+          aria-expanded={open}
         >
-          <span></span>
-        </div>
+          <span />
+        </button>
       </div>
 
+      {/* Мобильное меню */}
       <div className="nav-mobile" id="navMobile">
-        <a href="#why" onClick={() => setOpen(false)}>
+        <a href="#why" onClick={close}>
           Why now
         </a>
-        <a href="#pillars" onClick={() => setOpen(false)}>
+        <a href="#pillars" onClick={close}>
           What we’re building
         </a>
-        <a href="#architecture" onClick={() => setOpen(false)}>
+        <a href="#architecture" onClick={close}>
           Architecture
         </a>
-        <a href="#stability" onClick={() => setOpen(false)}>
+        <a href="#stability" onClick={close}>
           Stability
         </a>
-        <a href="#roadmap" onClick={() => setOpen(false)}>
+        <a href="#roadmap" onClick={close}>
           Progress
         </a>
-        <a href="#team" onClick={() => setOpen(false)}>
+        <a href="#team" onClick={close}>
           Team
         </a>
-        <a
-          href="#investors"
-          className="nav-cta"
-          onClick={() => setOpen(false)}
-        >
+        <a href="#investors" className="nav-cta" onClick={close}>
           For investors
         </a>
       </div>
