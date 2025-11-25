@@ -672,23 +672,24 @@ section::before {
 
 .section-label {
   font-family: "VT323", monospace;
-  font-size: 12px;
-  letter-spacing: 0.35em;
+  font-size: 11px;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--muted);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .section-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-  letter-spacing: -0.02em;
+  font-size: 26px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  letter-spacing: -0.03em;
 }
 
 .section-sub {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--muted);
-  max-width: 620px;
+  max-width: 560px;
 }
 
 /* остальные блоки (карточки, сетки и т.д.) такие же, как в статичном HTML, 
@@ -705,10 +706,13 @@ section::before {
   transform: translateY(0);
 }
 
-@media (max-width: 600px) {
+@media (min-width: 1024px) {
   .section-title {
-    font-size: 20px;
+    font-size: 32px;
   }
+  .section-sub {
+    font-size: 16px;
+    }
 }
 
 /* === LAYOUT FOR CONTENT SECTIONS === */
