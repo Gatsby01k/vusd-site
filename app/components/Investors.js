@@ -1,6 +1,6 @@
 export default function Investors() {
   return (
-    <section id="investors" className="reveal">
+    <section id="investors" className="section reveal">
       <div className="section-label">FOR INVESTORS</div>
       <h2 className="section-title">
         If you’re backing the next decade of financial infrastructure — let’s talk.
@@ -12,6 +12,7 @@ export default function Investors() {
       </p>
 
       <div className="investors-grid">
+        {/* ЛЕВАЯ КОЛОНКА — ОФФЕР */}
         <div>
           <div className="card">
             <div className="card-title">What we’re offering</div>
@@ -21,7 +22,9 @@ export default function Investors() {
                 • Exposure to privacy infrastructure, ZK rails and AI-governed risk tooling as a
                 platform.
               </li>
-              <li>• Direct access to architecture &amp; design decisions at the earliest stage.</li>
+              <li>
+                • Direct access to architecture &amp; design decisions at the earliest stage.
+              </li>
             </ul>
           </div>
 
@@ -36,6 +39,7 @@ export default function Investors() {
           </div>
         </div>
 
+        {/* ПРАВАЯ КОЛОНКА — ФОРМА */}
         <div className="form-card">
           <form
             action="https://formspree.io/f/your-form-id"
@@ -82,7 +86,7 @@ export default function Investors() {
                 id="message"
                 name="message"
                 placeholder="Share context on your fund, thesis, how you like to work with founders..."
-              ></textarea>
+              />
             </div>
 
             <button
