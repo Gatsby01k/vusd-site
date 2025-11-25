@@ -1793,3 +1793,157 @@ section::before {
   white-space: nowrap;
   border: 0;
 }
+
+/* === HERO TITLE — decrypt + AI glitch === */
+
+.hero-title {
+  font-size: clamp(3.1rem, 6vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  color: var(--text);
+}
+
+/* маска для всего текста: раскрывается слева направо */
+.hero-title-mask {
+  display: inline-block;
+  position: relative;
+  clip-path: inset(0 100% 0 0);
+  animation: heroTitleReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* слой “зашифрованных блоков”, который сползает вправо и исчезает */
+.hero-title-mask::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(9, 9, 11, 0.9) 0,
+      rgba(9, 9, 11, 0.9) 8px,
+      transparent 8px,
+      transparent 16px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(15, 23, 42, 0.9) 0,
+      rgba(15, 23, 42, 0.9) 4px,
+      transparent 4px,
+      transparent 8px
+    );
+  mix-blend-mode: multiply;
+  opacity: 1;
+  pointer-events: none;
+  animation: heroDecrypt 0.9s ease-out forwards;
+}
+
+@keyframes heroTitleReveal {
+  0%   { clip-path: inset(0 100% 0 0); }
+  100% { clip-path: inset(0 0 0 0); }
+}
+
+@keyframes heroDecrypt {
+  0%   { opacity: 1; transform: translateX(0); }
+  60%  { opacity: 0.7; transform: translateX(10px); }
+  100% { opacity: 0; transform: translateX(40px); }
+}
+
+/* === AI-governed: разовый эффект с градиентом и глитчем === */
+
+.hero-ai {
+  position: relative;
+  background: linear-gradient(
+    120deg,
+    #2cf5c8,
+    #40f7ff,
+    #9ff5ff,
+    #2cf5c8
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 650;
+}
+
+/* два цветных “призрачных” слоя поверх */
+.hero-ai::before,
+.hero-ai::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.hero-ai::before { color: #40f7ff; }
+.hero-ai::after  { color: #2cf5c8; }
+
+/* градиент один раз “протекает” через слово */
+.hero-ai {
+  animation: heroAIGradient 1.2s ease-out 0.3s forwards;
+}
+
+/* короткий глитч один раз после появления */
+.hero-ai::before {
+  animation: heroAIGlitch1 0.32s steps(2, end) 0.45s 1 forwards;
+}
+
+.hero-ai::after {
+  animation: heroAIGlitch2 0.32s steps(2, end) 0.45s 1 forwards;
+}
+
+@keyframes heroAIGradient {
+  0%   { background-position: 0% 40%; }
+  100% { background-position: 100% 60%; }
+}
+
+@keyframes heroAIGlitch1 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(-2px, -1px);
+    clip-path: inset(0 0 45% 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(1px, 1px);
+    clip-path: inset(0 0 15% 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes heroAIGlitch2 {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(2px, 1px);
+    clip-path: inset(55% 0 0 0);
+  }
+  60% {
+    opacity: 1;
+    transform: translate(-1px, -2px);
+    clip-path: inset(80% 0 0 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+}
+
