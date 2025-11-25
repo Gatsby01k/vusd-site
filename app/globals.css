@@ -1795,7 +1795,7 @@ section::before {
 }
 
 /* ================================================================
-   QUANTUM AI TITLE — постоянная анимация + мягкое свечение
+   CLEAN HERO TITLE (no jitter, no glow spam, no vibration)
    ================================================================ */
 
 .hero-title {
@@ -1808,89 +1808,65 @@ section::before {
   color: var(--text);
 }
 
-/* — ядро фразы (AI-governed) — бирюзовый цвет монеты */
-.hero-title .ai-core {
+/* ================================================================
+   AI-governed HIGHLIGHT — calm neon + data-scan underline
+   ================================================================ */
+
+.hero-token {
   position: relative;
-  color: #22ffe5;
   font-weight: 650;
-  text-shadow:
-    0 0 12px rgba(34, 255, 229, 0.75),
-    0 0 26px rgba(34, 255, 229, 0.55),
-    0 0 44px rgba(34, 255, 229, 0.35);
-  
-  /* ПУЛЬС + микро-вибрация */
-  animation:
-    aiCorePulse 2.8s ease-in-out infinite,
-    aiCoreJitter 0.16s linear infinite;
+  color: #22ffe5; /* бирюзовый как на монетке / лого */
 }
 
-/* — вся фраза получает лёгкую волну + микро-дрожь */
-.hero-title.quantum-flow {
-  position: relative;
-  display: inline-block;
-  color: var(--text);
-  text-shadow:
-    0 0 8px rgba(34, 255, 229, 0.35),
-    0 0 18px rgba(34, 255, 229, 0.2);
+/* тонкая живущая подчеркивающая линия — движется, текст стойт */
+.hero-token::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.18em;
+  height: 2px;
+  border-radius: 999px;
 
-  animation:
-    quantumWave 4.5s ease-in-out infinite,
-    quantumJitter 0.18s linear infinite;
+  /* неоновая линия */
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 255, 229, 1),
+    transparent
+  );
+
+  /* начальные параметры */
+  opacity: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+
+  animation: heroTokenScan 2.6s ease-in-out infinite;
 }
 
-/* ===== мягкая плазменная волна ===== */
-@keyframes quantumWave {
+/* ================================================================
+   data-scan animation (smooth, subtle, original)
+   ================================================================ */
+
+@keyframes heroTokenScan {
   0% {
-    text-shadow:
-      0 0 8px rgba(34, 255, 229, 0.3),
-      0 0 18px rgba(34, 255, 229, 0.2);
-    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: scaleX(0);
   }
-  50% {
-    text-shadow:
-      0 0 16px rgba(34, 255, 229, 0.7),
-      0 0 28px rgba(34, 255, 229, 0.5);
-    letter-spacing: -0.012em;
+  15% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+  40% {
+    opacity: 0.9;
+    transform: scaleX(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scaleX(0.3);
   }
   100% {
-    text-shadow:
-      0 0 8px rgba(34, 255, 229, 0.3),
-      0 0 18px rgba(34, 255, 229, 0.2);
-    letter-spacing: -0.02em;
+    opacity: 0;
+    transform: scaleX(0);
   }
-}
-
-/* ===== микро-дрожь для всей фразы ===== */
-@keyframes quantumJitter {
-  0%   { transform: translate(0, 0); }
-  50%  { transform: translate(0.4px, -0.4px) rotate(-0.03deg); }
-  100% { transform: translate(0, 0); }
-}
-
-/* ===== пульсация AI-сегмента ===== */
-@keyframes aiCorePulse {
-  0% {
-    text-shadow:
-      0 0 12px rgba(34, 255, 229, 0.65),
-      0 0 26px rgba(34, 255, 229, 0.45);
-  }
-  50% {
-    text-shadow:
-      0 0 22px rgba(34, 255, 229, 0.95),
-      0 0 42px rgba(34, 255, 229, 0.75),
-      0 0 66px rgba(34, 255, 229, 0.45);
-  }
-  100% {
-    text-shadow:
-      0 0 12px rgba(34, 255, 229, 0.65),
-      0 0 26px rgba(34, 255, 229, 0.45);
-  }
-}
-
-/* ===== микро-дрожь для AI ядра (чуть интенсивнее) ===== */
-@keyframes aiCoreJitter {
-  0%   { transform: translate(0, 0); }
-  33%  { transform: translate(-0.3px, 0.4px) rotate(0.04deg); }
-  66%  { transform: translate(0.4px, -0.3px) rotate(-0.03deg); }
-  100% { transform: translate(0, 0); }
 }
