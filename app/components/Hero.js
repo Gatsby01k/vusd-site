@@ -7,14 +7,12 @@ export default function Hero() {
 
         <h1 className="hero-title">
           A private, <span>AI-governed</span> USD stablecoin
-          <br />
-          engineered for the next financial era.
         </h1>
 
         <p className="hero-text">
-          VUSD combines zero-knowledge privacy, an autonomous stability engine and self-defending
-          infrastructure. The peg, risk and governance are managed by models — within hard-coded
-          on-chain constraints, not by ad-hoc human committees.
+          VUSD brings together ZK privacy, verifiable AI governance and autonomous
+          risk management — building the next generation of self-defending
+          stablecoin infrastructure.
         </p>
 
         {/* CTA-кнопки — используют уже существующие классы btn-primary/btn-ghost */}
