@@ -14,30 +14,31 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className="header">
-      <div className={`header-inner ${open ? "nav-open" : ""}`}>
-        {/* Лого / бренд */}
+    <header className={`header ${open ? "nav-open" : ""}`}>
+      <div className="header-inner">
+        
+        {/* Logo */}
         <div className="logo-area">
-          <a href="#top" className="logo-text" aria-label="VUSD home">
+          <a href="#top" className="logo-text" aria-label="VUSD home" onClick={close}>
             <span className="logo-main">VUSD.AI</span>
             <span className="logo-tagline">PRIVATE • AI-GOVERNED USD</span>
           </a>
         </div>
 
-        {/* Десктоп-меню */}
+        {/* Desktop nav */}
         <nav className="nav" aria-label="Main navigation">
-          <a href="#why">Why now</a>
-          <a href="#pillars">What we’re building</a>
-          <a href="#architecture">Architecture</a>
-          <a href="#stability">Stability</a>
-          <a href="#roadmap">Progress</a>
-          <a href="#team">Team</a>
-          <a href="#investors" className="nav-cta">
+          <a href="#why" onClick={close}>Why now</a>
+          <a href="#pillars" onClick={close}>What we’re building</a>
+          <a href="#architecture" onClick={close}>Architecture</a>
+          <a href="#stability" onClick={close}>Stability</a>
+          <a href="#roadmap" onClick={close}>Progress</a>
+          <a href="#team" onClick={close}>Team</a>
+          <a href="#investors" className="nav-cta" onClick={close}>
             For investors
           </a>
         </nav>
 
-        {/* Бургер на мобиле */}
+        {/* Mobile toggle */}
         <button
           type="button"
           className="nav-toggle"
@@ -49,29 +50,15 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Мобильное меню */}
+      {/* Mobile menu */}
       <div className="nav-mobile">
-        <a href="#why" onClick={close}>
-          Why now
-        </a>
-        <a href="#pillars" onClick={close}>
-          What we’re building
-        </a>
-        <a href="#architecture" onClick={close}>
-          Architecture
-        </a>
-        <a href="#stability" onClick={close}>
-          Stability
-        </a>
-        <a href="#roadmap" onClick={close}>
-          Progress
-        </a>
-        <a href="#team" onClick={close}>
-          Team
-        </a>
-        <a href="#investors" className="nav-cta" onClick={close}>
-          For investors
-        </a>
+        <a href="#why" onClick={close}>Why now</a>
+        <a href="#pillars" onClick={close}>What we’re building</a>
+        <a href="#architecture" onClick={close}>Architecture</a>
+        <a href="#stability" onClick={close}>Stability</a>
+        <a href="#roadmap" onClick={close}>Progress</a>
+        <a href="#team" onClick={close}>Team</a>
+        <a href="#investors" className="nav-cta" onClick={close}>For investors</a>
       </div>
     </header>
   );
