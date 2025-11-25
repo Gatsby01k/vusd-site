@@ -1794,9 +1794,9 @@ section::before {
   border: 0;
 }
 
-/* ================================================================
-   CLEAN HERO TITLE (no jitter, no glow spam, no vibration)
-   ================================================================ */
+/* =========================================================
+   HERO TITLE — статичный текст, без дёрганий
+   ========================================================= */
 
 .hero-title {
   position: relative;
@@ -1808,65 +1808,94 @@ section::before {
   color: var(--text);
 }
 
-/* ================================================================
-   AI-governed HIGHLIGHT — calm neon + data-scan underline
-   ================================================================ */
+/* =========================================================
+   AI-GOVERNED — privacy / AI стиль
+   ========================================================= */
 
-.hero-token {
+.hero-ai {
   position: relative;
   font-weight: 650;
-  color: #22ffe5; /* бирюзовый как на монетке / лого */
+  color: #22ffe5; /* цвет монеты */
+  text-shadow:
+    0 0 10px rgba(34, 255, 229, 0.65),
+    0 0 22px rgba(34, 255, 229, 0.4);
 }
 
-/* тонкая живущая подчеркивающая линия — движется, текст стойт */
-.hero-token::after {
+/* --- слой "privacy-шума" поверх слова --- */
+.hero-ai::before {
   content: "";
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.18em;
-  height: 2px;
-  border-radius: 999px;
-
-  /* неоновая линия */
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(34, 255, 229, 1),
-    transparent
-  );
-
-  /* начальные параметры */
-  opacity: 0;
-  transform-origin: left;
-  transform: scaleX(0);
-
-  animation: heroTokenScan 2.6s ease-in-out infinite;
+  inset: -10%;
+  pointer-events: none;
+  opacity: 0.18;
+  mix-blend-mode: soft-light;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(34, 255, 229, 0.15) 0,
+      rgba(34, 255, 229, 0.15) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(15, 23, 42, 0.9) 0,
+      rgba(15, 23, 42, 0.9) 2px,
+      transparent 2px,
+      transparent 6px
+    );
+  animation: heroAiNoiseSlide 14s linear infinite;
 }
 
-/* ================================================================
-   data-scan animation (smooth, subtle, original)
-   ================================================================ */
+/* --- тонкий сканирующий "beam" по слову --- */
+.hero-ai::after {
+  content: "";
+  position: absolute;
+  top: -10%;
+  bottom: -10%;
+  width: 22%;
+  left: -20%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.45),
+    rgba(34, 255, 229, 0.0) 70%
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  animation: heroAiBeam 6s linear infinite;
+}
 
-@keyframes heroTokenScan {
+/* =========================================================
+   KEYFRAMES — плавные, не раздражающие
+   ========================================================= */
+
+@keyframes heroAiNoiseSlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-10px, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes heroAiBeam {
   0% {
     opacity: 0;
-    transform: scaleX(0);
+    transform: translateX(0);
   }
-  15% {
-    opacity: 1;
-    transform: scaleX(1);
+  10% {
+    opacity: 0.8;
   }
-  40% {
-    opacity: 0.9;
-    transform: scaleX(1);
-  }
-  70% {
-    opacity: 0;
-    transform: scaleX(0.3);
+  50% {
+    opacity: 0.6;
+    transform: translateX(260%);
   }
   100% {
     opacity: 0;
-    transform: scaleX(0);
+    transform: translateX(260%);
   }
 }
