@@ -319,16 +319,30 @@ img {
 
 .nav-mobile {
   display: none;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem 1.25rem 1rem;
+  border-radius: 0 0 1.25rem 1.25rem;
+  background: radial-gradient(circle at top, rgba(79, 209, 255, 0.12), transparent 55%),
+    rgba(5, 8, 20, 0.98);
+  border-top: 1px solid rgba(135, 219, 255, 0.2);
 }
 
 @media (max-width: 800px) {
-  .nav { display: none; }
+  .nav { 
+    display: none; 
+  }
+
   .nav-toggle {
     display: block;
     position: relative;
   }
+
+  .header.nav-open .nav-mobile {
+    display: flex;
+  }
+
   .nav-mobile {
-    display: none;
     flex-direction: column;
     gap: 8px;
     padding: 10px 16px 14px;
@@ -337,13 +351,19 @@ img {
     border-top: 1px solid rgba(21, 27, 43, 0.8);
     background: rgba(2, 4, 10, 0.96);
   }
-  .nav-mobile a { padding: 4px 0; }
-  .nav-mobile a:hover { color: var(--neon); }
+
+  .nav-mobile a { 
+    padding: 4px 0; 
+  }
+
+  .nav-mobile a:hover { 
+    color: var(--neon); 
+  }
+
   .nav-mobile .nav-cta {
     display: inline-block;
     margin-top: 6px;
   }
-  .nav-open + .nav-mobile { display: flex; }
 }
 
 /* Секции */
