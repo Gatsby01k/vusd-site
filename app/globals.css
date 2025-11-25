@@ -388,17 +388,13 @@ section::before {
 }
 
 .hero {
-  min-height: calc(100vh - 90px);
-  display: grid;
-  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
-  gap: 56px;
-  align-items: center;
+  padding-block: 6rem 4rem;
+  position: relative;
 }
 
 @media (max-width: 900px) {
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 36px;
+  .hero-inner {
+    grid-template-columns: 1fr;
   }
 }
 
