@@ -1,5 +1,6 @@
 "use client";
 
+import MetricsStrip from "./components/MetricsStrip";
 import { useEffect } from "react";
 import Hero from "./components/Hero";
 import WhyNow from "./components/WhyNow";
