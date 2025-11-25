@@ -1,21 +1,26 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const toggle = () => setOpen((v) => !v);
-  const close = () => setOpen(false);
+  const toggle = useCallback(() => {
+    setOpen((v) => !v);
+  }, []);
+
+  const close = useCallback(() => {
+    setOpen(false);
+  }, []);
 
   return (
     <header className="header">
       <div className={`header-inner ${open ? "nav-open" : ""}`}>
-        {/* Логотип / бренд-зона */}
+        {/* Лого / бренд */}
         <div className="logo-area">
           <a href="#top" className="logo-text" aria-label="VUSD home">
             <span className="logo-main">VUSD.AI</span>
-            <span className="logo-tagline">Private • AI-governed USD</span>
+            <span className="logo-tagline">PRIVATE • AI-GOVERNED USD</span>
           </a>
         </div>
 
@@ -32,7 +37,7 @@ export default function Navbar() {
           </a>
         </nav>
 
-        {/* Бургер для мобилы */}
+        {/* Бургер на мобиле */}
         <button
           type="button"
           className="nav-toggle"
@@ -45,7 +50,7 @@ export default function Navbar() {
       </div>
 
       {/* Мобильное меню */}
-      <div className="nav-mobile" id="navMobile">
+      <div className="nav-mobile">
         <a href="#why" onClick={close}>
           Why now
         </a>
