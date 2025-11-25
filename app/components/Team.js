@@ -12,26 +12,39 @@ export default function Team() {
 
       <div className="team-grid">
         <div className="founder-card">
-          <div className="founder-name">Your Name</div>
-          <div className="founder-role">FOUNDER • PROTOCOL &amp; AI</div>
+          <div className="founder-name">Vladyslav Bozhko</div>
+          <div className="founder-role">FOUNDER • PROTOCOL, AI & CRYPTOGRAPHY</div>
           <p style={{ fontSize: 13, color: "var(--muted)" }}>
-            Background across crypto, machine learning and protocol design. Building the core
-            architecture, ASE framework and governance primitives while assembling cryptography,
-            risk and legal contributors around VUSD.
+            Builder with strong background across AI systems, protocol architecture, security and
+            high-integrity financial infrastructure.  
+            <br /><br />
+            Before starting VUSD, Vladyslav worked across engineering, automation, AI-driven tooling
+            and product systems — designing and implementing complex backend and data pipelines, scalable automation frameworks, and 
+            intelligent agent workflows used in production environments.
+            <br /><br />
+            Today he leads protocol design, autonomy modeling, and cryptographic rails for VUSD:  
+            bringing together AI-driven stability systems, private-by-default transaction layers,
+            and a fully autonomous governance architecture.
           </p>
-          <div className="tag-chip">Founder-led • Deep technical</div>
+
+          <a
+            className="tag-chip"
+            href="https://www.linkedin.com/in/vladyslav-bozhko/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn → Vladyslav Bozhko
+          </a>
         </div>
 
         <div>
           <div className="card">
             <div className="card-title">Actively hiring core contributors</div>
             <ul className="hiring-list">
-              <li>• Cryptography / ZK engineer — design &amp; implement proof systems and circuits.</li>
-              <li>• Risk &amp; quant researcher — build ASE models and tail-risk tooling.</li>
-              <li>• Protocol engineer — productionize the shielded pool and collateral vaults.</li>
-              <li>
-                • Compliance &amp; regulatory strategy — structure jurisdictional rollout.
-              </li>
+              <li>• Cryptography / ZK engineer — circuits + proof systems.</li>
+              <li>• Risk & quant researcher — ASE models, tail-risk tooling.</li>
+              <li>• Protocol engineer — shielded pool & vault primitives.</li>
+              <li>• Compliance & regulatory strategy.</li>
             </ul>
             <div className="tag-chip">Global • Remote-first</div>
           </div>
