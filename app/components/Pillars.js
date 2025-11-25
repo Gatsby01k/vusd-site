@@ -1,3 +1,5 @@
+import { roadmap } from "../content/pillars";
+
 export default function Pillars() {
   return (
     <section id="pillars" className="section reveal">
