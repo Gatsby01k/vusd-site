@@ -1,36 +1,58 @@
 export default function WhyNow() {
   return (
-    <section id="why" className="reveal">
-      <div className="section-label">WHY NOW</div>
-      <h2 className="section-title">
-        Stablecoins scaled finance — but they didn’t evolve with it.
-      </h2>
-      <p className="section-sub">
-        2017-era architecture can’t handle a decade of regulatory pressure, liquidity shocks and
-        disappearing privacy. Capital needs stability. Users need autonomy. VUSD is built for this
-        tension.
-      </p>
+    <section className="section reveal" id="why">
+      <h2 className="section-title">Why now?</h2>
 
-      <div className="why-grid">
+      <div className="section-grid">
+        {/* 1 */}
         <div className="card">
-          <div className="card-title">The fracture in today’s stablecoins</div>
+          <div className="card-title">Privacy is becoming mandatory</div>
           <ul className="card-list">
-            <li>• Transparent by design — every transaction is linkable, every user is legible.</li>
-            <li>• Human-run risk committees reacting on Twitter timelines and news cycles.</li>
-            <li>• Centralized operators as single points of failure and regulatory choke points.</li>
-            <li>• Experimental “algorithmic” designs that blew up trust instead of building it.</li>
+            <li>
+              Users, institutions and protocols increasingly require private balances and protected
+              transaction graphs for competitive and safety reasons.
+            </li>
+            <li>
+              ZK proofs make it possible to keep balances hidden while still proving solvency and
+              enforcing strict constraints.
+            </li>
+            <li>Privacy is no longer a luxury — it is baseline infrastructure.</li>
           </ul>
-          <div className="pill">Legacy rails, new attack surface.</div>
         </div>
 
+        {/* 2 */}
         <div className="card">
-          <div className="card-title">The structural gap</div>
+          <div className="card-title">Models outperform committees</div>
           <ul className="card-list">
-            <li>• No stablecoin delivers Monero-grade privacy with on-chain verifiability.</li>
-            <li>• No system uses AI as an autonomous, parameter-level risk regulator.</li>
-            <li>• Governance is still politics and forums, not guardrails and constraints.</li>
+            <li>
+              Human governance is slow, reactive and often politicized. Models enforce constraints
+              predictably and continuously.
+            </li>
+            <li>
+              Autonomous risk engines can maintain collateral levels, rebalance positions and enforce
+              tail-risk limits in real time.
+            </li>
+            <li>On-chain constraints provide bounded autonomy and prevent capture.</li>
           </ul>
-          <div className="pill">VUSD exists to close this gap.</div>
+        </div>
+
+        {/* 3 */}
+        <div className="card">
+          <div className="card-title">Stablecoins need real infrastructure</div>
+          <ul className="card-list">
+            <li>
+              Today’s largest stablecoins rely on opaque custodians and discretionary human
+              decision-making.
+            </li>
+            <li>
+              Next-generation financial infrastructure must be transparent, self-auditing and
+              minimally trust-required.
+            </li>
+            <li>
+              A private, AI-governed USD asset is the next logical step in the evolution of digital
+              money.
+            </li>
+          </ul>
         </div>
       </div>
     </section>
