@@ -1151,65 +1151,64 @@ section::before {
   line-height: 1.5;
 }
 
-/* TEAM */
+/* =========================================================
+   TEAM
+   ========================================================= */
 
 .team-grid {
-  margin-top: 26px;
+  margin-top: 36px;
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 20px;
-  align-items: flex-start;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .team-grid {
-    grid-template-columns: minmax(0, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.founder-card {
-  border-radius: var(--radius-card);
-  border: 1px solid rgba(44, 245, 200, 0.35);
-  background: radial-gradient(circle at top, rgba(44, 245, 200, 0.15), rgba(2, 4, 10, 0.98));
-  padding: 18px 18px 14px;
+@media (max-width: 650px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.founder-name {
-  font-size: 16px;
-  font-weight: 500;
-  margin-bottom: 4px;
+.team-card {
+  background: rgba(10, 15, 25, 0.75);
+  border: 1px solid rgba(44, 245, 200, 0.3);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
 }
 
-.founder-role {
+.team-card:hover {
+  background: rgba(12, 18, 30, 0.88);
+  border-color: rgba(44, 245, 200, 0.5);
+  transform: translateY(-2px);
+}
+
+.team-role {
   font-size: 12px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--muted);
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.team-name {
+  font-size: 18px;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.hiring-list {
-  list-style: none;
-  font-size: 13px;
+.team-desc {
+  font-size: 14px;
   color: var(--muted);
-  margin-top: 10px;
+  line-height: 1.55;
 }
 
-.hiring-list li + li {
-  margin-top: 6px;
-}
-
-.tag-chip {
-  display: inline-flex;
-  padding: 3px 8px;
-  border-radius: 999px;
-  border: 1px solid rgba(44, 245, 200, 0.4);
-  font-size: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: rgba(124, 135, 153, 0.95);
-  margin-top: 6px;
-}
 
 /* INVESTORS + FORM */
 
