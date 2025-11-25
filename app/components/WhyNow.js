@@ -1,3 +1,4 @@
+import Section from "./ui/Section";
 import { roadmap } from "../content/whyNow";
 
 export default function WhyNow() {
