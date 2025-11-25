@@ -1,6 +1,6 @@
 export default function Pillars() {
   return (
-    <section id="pillars" className="reveal">
+    <section id="pillars" className="section reveal">
       <div className="section-label">WHAT WE’RE BUILDING</div>
       <h2 className="section-title">
         A new class of stable asset: private, intelligent, self-governed.
@@ -11,6 +11,7 @@ export default function Pillars() {
       </p>
 
       <div className="pillars-grid">
+        {/* MODULE 01 — PRIVACY */}
         <div className="pillar-card">
           <div className="pillar-label">MODULE 01 — PRIVACY</div>
           <div className="pillar-title">Private-by-default stablecoin</div>
@@ -28,6 +29,7 @@ export default function Pillars() {
           </div>
         </div>
 
+        {/* MODULE 02 — STABILITY */}
         <div className="pillar-card">
           <div className="pillar-label">MODULE 02 — STABILITY</div>
           <div className="pillar-title">Autonomous Stability Engine (ASE)</div>
@@ -45,6 +47,7 @@ export default function Pillars() {
           </div>
         </div>
 
+        {/* MODULE 03 — GOVERNANCE */}
         <div className="pillar-card">
           <div className="pillar-label">MODULE 03 — GOVERNANCE</div>
           <div className="pillar-title">AI-assisted, constraint-driven governance</div>
@@ -62,6 +65,7 @@ export default function Pillars() {
           </div>
         </div>
 
+        {/* MODULE 04 — SECURITY */}
         <div className="pillar-card">
           <div className="pillar-label">MODULE 04 — SECURITY</div>
           <div className="pillar-title">Self-defending infrastructure</div>
