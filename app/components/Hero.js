@@ -41,26 +41,41 @@ export default function Hero() {
 
         {/* Правая колонка — премиальная панель-снэпшот */}
         <Card className="hero-panel">
-          <div className="hero-panel-item">
-            <div className="hero-panel-label">Privacy</div>
-            <div className="hero-panel-value">ZK Layer</div>
-          </div>
+  <div className="hero-panel-header">
+    <div className="hero-panel-chip">
+      <span className="hero-panel-chip-dot" />
+      System snapshot
+    </div>
+    <div className="hero-panel-status">Pre-mainnet · 2025</div>
+  </div>
 
-          <div className="hero-panel-item">
-            <div className="hero-panel-label">Governance</div>
-            <div className="hero-panel-value">AI-autonomous</div>
-          </div>
+  <div className="hero-panel-rows">
+    <div className="hero-panel-row">
+      <div className="hero-panel-label">Privacy</div>
+      <div className="hero-panel-value">ZK Layer</div>
+    </div>
 
-          <div className="hero-panel-item">
-            <div className="hero-panel-label">Risk model</div>
-            <div className="hero-panel-value">Self-defending</div>
-          </div>
+    <div className="hero-panel-row">
+      <div className="hero-panel-label">Governance</div>
+      <div className="hero-panel-value">AI-autonomous</div>
+    </div>
 
-          <div className="hero-panel-item">
-            <div className="hero-panel-label">Status</div>
-            <div className="hero-panel-value">In development</div>
-          </div>
-        </Card>
+    <div className="hero-panel-row">
+      <div className="hero-panel-label">Risk model</div>
+      <div className="hero-panel-value">Self-defending</div>
+    </div>
+
+    <div className="hero-panel-row">
+      <div className="hero-panel-label">Status</div>
+      <div className="hero-panel-value">In development</div>
+    </div>
+  </div>
+
+  <div className="hero-panel-footnote">
+    Designed for on-chain AI governance with ZK-powered privacy and
+    autonomous stability controls.
+  </div>
+</Card>
       </div>
     </section>
   );
