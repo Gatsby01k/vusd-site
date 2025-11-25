@@ -12,7 +12,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata = {
   title: "VUSD.AI — Private, AI-Governed USD Stablecoin",
   description:
-    "VUSD is a private, AI-governed USD stablecoin with ZK privacy, autonomous risk management and self-defending infrastructure.",
+    "VUSD is a private, AI-governed USD stablecoin with ZK-powered privacy, autonomous risk management and self-defending stability infrastructure.",
   keywords: [
     "VUSD",
     "stablecoin",
