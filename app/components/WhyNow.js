@@ -1,3 +1,5 @@
+import { roadmap } from "../content/whyNow";
+
 export default function WhyNow() {
   return (
     <section className="section reveal" id="why">
