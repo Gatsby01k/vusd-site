@@ -165,12 +165,27 @@ img {
 }
 
 .logo-text {
-  font-family: "VT323", monospace;
-  font-size: 24px;
-  letter-spacing: 0.4em;
-  color: var(--neon);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-decoration: none;
   text-transform: uppercase;
-  position: relative;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.logo-main {
+  font-size: 13px;
+  line-height: 1.1;
+}
+
+.logo-tagline {
+  font-size: 10px;
+  line-height: 1.1;
+  letter-spacing: 0.18em;
+  color: var(--muted);
 }
 
 /* Лёгкий глич */
