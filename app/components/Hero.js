@@ -8,8 +8,8 @@ export default function Hero() {
       <div className="hero-inner">
         {/* Левая колонка — текст */}
         <div className="hero-content">
-          <h1 className="hero-title quantum-flow">
-  A private, <span className="ai-core">AI-governed</span> USD stablecoin
+          <h1 className="hero-title">
+  A private, <span className="hero-token">AI-governed</span> USD stablecoin
 </h1>
 
           <p className="hero-sub">
