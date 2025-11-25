@@ -1086,70 +1086,69 @@ section::before {
 }
 
 
-/* ROADMAP */
+/* =========================================================
+   ROADMAP
+   ========================================================= */
 
-.roadmap {
-  margin-top: 28px;
+.roadmap-grid {
+  margin-top: 32px;
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 22px;
 }
 
-@media (max-width: 900px) {
-  .roadmap {
-    grid-template-columns: minmax(0, 1fr);
+@media (max-width: 1050px) {
+  .roadmap-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.timeline {
-  position: relative;
-  padding-left: 16px;
+@media (max-width: 650px) {
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.timeline::before {
-  content: "";
-  position: absolute;
-  left: 3px;
-  top: 4px;
-  bottom: 4px;
-  width: 1px;
-  background: linear-gradient(180deg, rgba(44, 245, 200, 0.8), transparent);
+.roadmap-card {
+  background: rgba(10, 15, 25, 0.75);
+  border: 1px solid rgba(44, 245, 200, 0.35);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 16px;
-  padding-left: 10px;
+.roadmap-card:hover {
+  background: rgba(12, 18, 30, 0.88);
+  border-color: rgba(44, 245, 200, 0.5);
+  transform: translateY(-2px);
 }
 
-.timeline-dot {
-  position: absolute;
-  left: -3px;
-  top: 4px;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: var(--neon);
-  box-shadow: 0 0 12px rgba(44, 245, 200, 0.7);
-}
-
-.timeline-label {
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--muted);
-  margin-bottom: 4px;
-}
-
-.timeline-title {
-  font-size: 14px;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.timeline-body {
+.roadmap-time {
   font-size: 13px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.roadmap-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.roadmap-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roadmap-list li {
+  margin: 4px 0;
+  font-size: 14px;
   color: var(--muted);
+  line-height: 1.5;
 }
 
 /* TEAM */
