@@ -10,7 +10,9 @@ export default function Hero() {
         <div className="hero-content">
           <h1 className="hero-title">
   A private,{" "}
-  <span className="hero-highlight">AI-governed</span>{" "}
+  <span className="hero-highlight" data-text="AI-governed">
+    AI-governed
+  </span>{" "}
   USD stablecoin
 </h1>
 
