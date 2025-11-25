@@ -1,3 +1,5 @@
+import { roadmap } from "../content/roadmap";
+
 export default function Roadmap() {
   return (
     <section id="roadmap" className="section reveal">
