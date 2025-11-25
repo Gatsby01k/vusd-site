@@ -3,19 +3,33 @@ export default function Hero() {
     <section className="hero" id="top">
       <div>
         <div className="hero-kicker">PRIVATE • AI-GOVERNED • USD</div>
+
         <h1 className="hero-title">
-          A private, <span>AI-governed</span> USD stablecoin for the next financial era.
+          A private, <span>AI-governed</span> USD stablecoin
+          <br />
+          engineered for the next financial era.
         </h1>
+
         <p className="hero-text">
-          VUSD combines zero-knowledge privacy, an autonomous stability engine and
-          self-defending infrastructure. Stability becomes a
-          <span style={{ color: "var(--neon-soft)" }}> system property</span>, not a promise backed by a committee.
+          VUSD combines zero-knowledge privacy, an autonomous stability engine and self-defending
+          infrastructure. The peg, risk and governance are managed by models — within
+          hard-coded on-chain constraints, not by ad-hoc human committees.
         </p>
 
+        {/* Статус проекта */}
+        <div style={{ marginTop: 18, display: "flex", flexWrap: "wrap", gap: 10 }}>
+          <div className="chip">
+            <span className="chip-dot" />
+            <span>Prototype live — investor conversations open</span>
+          </div>
+        </div>
+
+        {/* Основные selling-points */}
         <div className="hero-badges">
-          <div className="badge">Zero-knowledge privacy</div>
-          <div className="badge">Autonomous stability engine</div>
-          <div className="badge">No centralized operators</div>
+          <div className="badge">ZK-shielded balances</div>
+          <div className="badge">Autonomous Stability Engine</div>
+          <div className="badge">AI-originated governance</div>
+          <div className="badge">Self-defending infra</div>
         </div>
 
         <div className="hero-cta-row">
@@ -29,11 +43,12 @@ export default function Hero() {
         </div>
 
         <p className="hero-footnote">
-          Raising $5–10M from long-term funds backing privacy, autonomous financial infrastructure
-          and cryptography-heavy protocols.
+          Raising $5–10M from long-term funds backing privacy, cryptography-heavy protocols and
+          autonomous financial infrastructure.
         </p>
       </div>
 
+      {/* Правая панель — оставляем, она уже классная, чуть подчищено по тексту */}
       <aside className="hero-panel">
         <div className="arch-lattice"></div>
         <div className="panel-header">
@@ -83,7 +98,7 @@ export default function Hero() {
           <div className="stat-card">
             <div className="stat-label">RISK ENGINE</div>
             <div className="stat-value">Autonomous</div>
-            <div className="stat-tag">Always-on collateral & peg defender.</div>
+            <div className="stat-tag">24/7 collateral & peg defence.</div>
           </div>
           <div className="stat-card">
             <div className="stat-label">INFRA</div>
@@ -101,8 +116,8 @@ export default function Hero() {
             <div className="diagram-chip">AI Governance</div>
           </div>
           <div className="diagram-note">
-            Transactions stay private, risk is managed by models, not committees, and
-            constraints are enforced on-chain.
+            Transactions stay private, risk is managed by models, not committees, and constraints are
+            enforced on-chain.
           </div>
         </div>
       </aside>
