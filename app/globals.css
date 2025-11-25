@@ -33,7 +33,7 @@ html {
 body {
   background: radial-gradient(circle at top, #050816 0, #02040a 60%, #000 100%);
   color: var(--text);
-  font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   min-height: 100vh;
   line-height: 1.6;
   position: relative;
