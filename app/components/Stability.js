@@ -1,3 +1,5 @@
+import { roadmap } from "../content/stability";
+
 export default function Stability() {
   return (
     <section id="stability" className="reveal">
