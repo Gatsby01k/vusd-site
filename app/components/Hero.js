@@ -9,8 +9,10 @@ export default function Hero() {
         {/* Левая колонка — текст */}
         <div className="hero-content">
           <h1 className="hero-title">
-            A private, AI-governed USD stablecoin
-          </h1>
+  A private,{" "}
+  <span className="hero-highlight">AI-governed</span>{" "}
+  USD stablecoin
+</h1>
 
           <p className="hero-sub">
             VUSD brings together ZK privacy, verifiable AI governance and
