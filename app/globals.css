@@ -744,20 +744,86 @@ section::before {
 
 /* === LAYOUT FOR CONTENT SECTIONS === */
 
-/* WHY NOW */
+/* =========================================================
+   WHY NOW
+   ========================================================= */
 
-.why-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-  gap: 28px;
-  margin-top: 26px;
+#why {
+  margin-top: 120px;
+  margin-bottom: 120px;
 }
 
-@media (max-width: 900px) {
-  .why-grid {
-    grid-template-columns: minmax(0, 1fr);
+#why .section-title {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 18px;
+}
+
+#why .section-sub {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 42px;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* GRID WRAPPER */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+@media (max-width: 1050px) {
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+@media (max-width: 700px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+#why .card {
+  background: rgba(10, 15, 25, 0.75);
+  border: 1px solid rgba(44, 245, 200, 0.32);
+  border-radius: 14px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: 0.25s ease;
+}
+
+#why .card:hover {
+  background: rgba(12, 18, 30, 0.88);
+  border-color: rgba(44, 245, 200, 0.5);
+  transform: translateY(-2px);
+}
+
+/* CARD TITLE */
+#why .card-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* CARD LIST */
+#why .card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#why .card-list li {
+  margin: 6px 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
 
 /* ОБЩИЕ КАРТОЧКИ — ОБНОВЛЁННЫЙ ВИД, НО ТЕ ЖЕ КЛАССЫ */
 
