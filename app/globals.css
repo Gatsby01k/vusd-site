@@ -389,12 +389,15 @@ section::before {
 
 /* ===== HERO ===== */
 
+/* =========================================================
+   HERO — новый фирменный вид
+   ========================================================= */
+
 .hero {
   padding-block: 6rem 4rem;
   position: relative;
 }
 
-/* GRID */
 .hero-inner {
   max-width: 1120px;
   margin: 0 auto;
@@ -407,132 +410,132 @@ section::before {
 
 @media (max-width: 900px) {
   .hero-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.4rem;
   }
-
-  .hero-content {
-    padding-right: 0;
-  }
 }
 
-/* LEFT SIDE */
-.hero-content {
-  padding-right: 40px;
+.hero-kicker {
+  font-family: "VT323", monospace;
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 
-/* TITLE — PREMIUM VERSION */
 .hero-title {
   position: relative;
-  font-size: clamp(3.3rem, 6vw, 4.8rem);
+  font-size: clamp(3rem, 6vw, 4.6rem);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.015em;
-  max-width: 20ch;
+  max-width: 22ch;
   color: var(--text);
   overflow: hidden;
 }
 
-/* privacy scan strip */
+/* === LAYER 1: Privacy Scan Effect === */
 .hero-title::after {
   content: "";
   position: absolute;
   top: 0;
-  left: -35%;
+  left: -30%;
   width: 30%;
   height: 100%;
   background: linear-gradient(
     120deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.15) 50%,
-    transparent 100%
+    transparent,
+    rgba(255, 255, 255, 0.13),
+    transparent
   );
   mix-blend-mode: screen;
   pointer-events: none;
-  animation: heroTitleScan 6s linear infinite;
+  animation: heroTitleScan 5s linear infinite;
 }
 
-/* highlighted “AI-governed” */
+/* === LAYER 2: ZK encrypted noise === */
+.hero-title::before {
+  content: "";
+  position: absolute;
+  inset: -8%;
+  background-image: repeating-linear-gradient(
+      90deg,
+      rgba(148, 233, 255, 0.05) 0,
+      rgba(148, 233, 255, 0.05) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(44, 245, 200, 0.04) 0,
+      rgba(44, 245, 200, 0.04) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+  mix-blend-mode: soft-light;
+  opacity: 0.18;
+  pointer-events: none;
+  animation: heroTitleNoise 14s linear infinite;
+}
+
+.hero-content {
+  padding-right: 40px;
+}
+
+/* DESCRIPTION */
+.hero-sub {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+/* BULLETS */
+.hero-bullets {
+  margin-top: 18px;
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(200, 225, 255, 0.8);
+}
+
+/* === AI-governed highlight with flowing gradient === */
 .hero-highlight {
   background: linear-gradient(
     120deg,
     #2cf5c8,
     #40f7ff,
-    #9ff5ff
+    #9ff5ff,
+    #2cf5c8
   );
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   font-weight: 650;
   white-space: nowrap;
-  animation: heroHighlightPulse 4s ease-in-out infinite alternate;
+
+  animation:
+    heroHighlightPulse 4s ease-in-out infinite alternate,
+    heroHighlightFlow 10s linear infinite;
 }
 
-/* scan animation */
-@keyframes heroTitleScan {
-  0% {
-    transform: translateX(0);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  60% {
-    transform: translateX(260%);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(260%);
-    opacity: 0;
-  }
-}
-
-/* highlight breathing */
-@keyframes heroHighlightPulse {
-  0% {
-    filter: drop-shadow(0 0 0px rgba(64, 247, 255, 0.0));
-  }
-  50% {
-    filter: drop-shadow(0 0 12px rgba(64, 247, 255, 0.35));
-  }
-  100% {
-    filter: drop-shadow(0 0 0px rgba(64, 247, 255, 0.0));
-  }
-}
-
-/* SUBTITLE */
-.hero-sub {
-  margin-top: 16px;
-  font-size: 16px;
-  color: var(--muted);
-  max-width: 580px;
-  line-height: 1.7;
-}
-
-/* BULLETS */
-.hero-bullets {
-  margin-top: 20px;
-  display: grid;
-  gap: 6px;
-  font-size: 14px;
-  color: rgba(200, 225, 255, 0.85);
-}
-
-/* CTA ROW */
+/* CTA buttons */
 .hero-cta-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
-  margin-top: 28px;
+  gap: 12px;
+  margin-top: 24px;
 }
 
-/* CTA BUTTONS */
 .hero-cta {
   font-size: 12px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 12px 22px;
+  padding: 11px 20px;
   border-radius: 999px;
   border: 1px solid transparent;
   display: inline-flex;
@@ -564,6 +567,36 @@ section::before {
 .hero-cta.secondary:hover {
   border-color: var(--neon);
   color: var(--neon);
+}
+
+/* =========================================================
+   KEYFRAMES
+   ========================================================= */
+
+/* Moving scan bar */
+@keyframes heroTitleScan {
+  0%   { transform: translateX(-40%); }
+  100% { transform: translateX(160%); }
+}
+
+/* ZK encrypted noise motion */
+@keyframes heroTitleNoise {
+  0%   { transform: translate3d(0, 0, 0); }
+  50%  { transform: translate3d(-12px, -6px, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+/* Pulsing intensity */
+@keyframes heroHighlightPulse {
+  0%   { opacity: 0.75; }
+  100% { opacity: 1; }
+}
+
+/* Flowing gradient */
+@keyframes heroHighlightFlow {
+  0%   { background-position: 0% 40%; }
+  50%  { background-position: 100% 60%; }
+  100% { background-position: 0% 40%; }
 }
 
 
