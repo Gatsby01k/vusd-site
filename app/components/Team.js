@@ -1,3 +1,5 @@
+import Section from "./ui/Section";
+import Card from "./ui/Card";
 import { roadmap } from "../content/team";
 
 export default function Team() {
