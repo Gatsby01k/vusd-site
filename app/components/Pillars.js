@@ -1,4 +1,5 @@
 import Section from "./ui/Section";
+import Card from "./ui/Card";
 import { roadmap } from "../content/pillars";
 
 export default function Pillars() {
