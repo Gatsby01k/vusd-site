@@ -419,11 +419,16 @@ section::before {
 }
 
 .hero-title {
-  font-size: clamp(2.4rem, 5vw, 3.4rem);
-  line-height: 1.1;
+  font-size: clamp(3rem, 6vw, 4.6rem);
   font-weight: 600;
-  letter-spacing: -0.03em;
-  max-width: 16ch;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  max-width: 22ch;
+  color: var(--text);
+}
+
+.hero-content {
+  padding-right: 40px;
 }
 
 .hero-sub {
@@ -440,12 +445,6 @@ section::before {
   gap: 6px;
   font-size: 13px;
   color: rgba(200, 225, 255, 0.8);
-}
-
-
-.hero-title span {
-  color: var(--neon);
-  text-shadow: 0 0 18px rgba(44, 245, 200, 0.4);
 }
 
 .hero-text {
