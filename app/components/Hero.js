@@ -9,11 +9,13 @@ export default function Hero() {
         {/* Левая колонка — текст */}
         <div className="hero-content">
           <h1 className="hero-title">
-  A private,{" "}
-  <span className="hero-highlight" data-text="AI-governed">
-    AI-governed
-  </span>{" "}
-  USD stablecoin
+  <span className="hero-title-mask">
+    A private,{" "}
+    <span className="hero-ai" data-text="AI-governed">
+      AI-governed
+    </span>{" "}
+    USD stablecoin
+  </span>
 </h1>
 
           <p className="hero-sub">
