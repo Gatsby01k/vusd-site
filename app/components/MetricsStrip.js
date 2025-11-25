@@ -5,15 +5,17 @@ export default function MetricsStrip() {
         <div className="metrics-item">
           <div className="metrics-label">Stage</div>
           <div className="metrics-value">
-            <span>Prototype</span> • cryptography & simulations in active development
+            <span>Prototype</span> • cryptography &amp; simulations in active development
           </div>
         </div>
+
         <div className="metrics-item">
           <div className="metrics-label">Raise</div>
           <div className="metrics-value">
             <span>$5–10M</span> seed / early-stage
           </div>
         </div>
+
         <div className="metrics-item">
           <div className="metrics-label">Structure</div>
           <div className="metrics-value">
