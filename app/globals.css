@@ -1794,156 +1794,103 @@ section::before {
   border: 0;
 }
 
-/* === HERO TITLE — decrypt + AI glitch === */
+/* ================================================================
+   QUANTUM AI TITLE — постоянная анимация + мягкое свечение
+   ================================================================ */
 
 .hero-title {
-  font-size: clamp(3.1rem, 6vw, 4.8rem);
+  position: relative;
+  font-size: clamp(3rem, 6vw, 4.6rem);
   font-weight: 600;
-  line-height: 1.1;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   max-width: 22ch;
   color: var(--text);
 }
 
-/* маска для всего текста: раскрывается слева направо */
-.hero-title-mask {
-  display: inline-block;
+/* — ядро фразы (AI-governed) — бирюзовый цвет монеты */
+.hero-title .ai-core {
   position: relative;
-  clip-path: inset(0 100% 0 0);
-  animation: heroTitleReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* слой “зашифрованных блоков”, который сползает вправо и исчезает */
-.hero-title-mask::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(9, 9, 11, 0.9) 0,
-      rgba(9, 9, 11, 0.9) 8px,
-      transparent 8px,
-      transparent 16px
-    ),
-    repeating-linear-gradient(
-      0deg,
-      rgba(15, 23, 42, 0.9) 0,
-      rgba(15, 23, 42, 0.9) 4px,
-      transparent 4px,
-      transparent 8px
-    );
-  mix-blend-mode: multiply;
-  opacity: 1;
-  pointer-events: none;
-  animation: heroDecrypt 0.9s ease-out forwards;
-}
-
-@keyframes heroTitleReveal {
-  0%   { clip-path: inset(0 100% 0 0); }
-  100% { clip-path: inset(0 0 0 0); }
-}
-
-@keyframes heroDecrypt {
-  0%   { opacity: 1; transform: translateX(0); }
-  60%  { opacity: 0.7; transform: translateX(10px); }
-  100% { opacity: 0; transform: translateX(40px); }
-}
-
-/* === AI-governed: разовый эффект с градиентом и глитчем === */
-
-.hero-ai {
-  position: relative;
-  background: linear-gradient(
-    120deg,
-    #2cf5c8,
-    #40f7ff,
-    #9ff5ff,
-    #2cf5c8
-  );
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #22ffe5;
   font-weight: 650;
+  text-shadow:
+    0 0 12px rgba(34, 255, 229, 0.75),
+    0 0 26px rgba(34, 255, 229, 0.55),
+    0 0 44px rgba(34, 255, 229, 0.35);
+  
+  /* ПУЛЬС + микро-вибрация */
+  animation:
+    aiCorePulse 2.8s ease-in-out infinite,
+    aiCoreJitter 0.16s linear infinite;
 }
 
-/* два цветных “призрачных” слоя поверх */
-.hero-ai::before,
-.hero-ai::after {
-  content: attr(data-text);
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  mix-blend-mode: screen;
+/* — вся фраза получает лёгкую волну + микро-дрожь */
+.hero-title.quantum-flow {
+  position: relative;
+  display: inline-block;
+  color: var(--text);
+  text-shadow:
+    0 0 8px rgba(34, 255, 229, 0.35),
+    0 0 18px rgba(34, 255, 229, 0.2);
+
+  animation:
+    quantumWave 4.5s ease-in-out infinite,
+    quantumJitter 0.18s linear infinite;
 }
 
-.hero-ai::before { color: #40f7ff; }
-.hero-ai::after  { color: #2cf5c8; }
-
-/* градиент один раз “протекает” через слово */
-.hero-ai {
-  animation: heroAIGradient 1.2s ease-out 0.3s forwards;
-}
-
-/* короткий глитч один раз после появления */
-.hero-ai::before {
-  animation: heroAIGlitch1 0.32s steps(2, end) 0.45s 1 forwards;
-}
-
-.hero-ai::after {
-  animation: heroAIGlitch2 0.32s steps(2, end) 0.45s 1 forwards;
-}
-
-@keyframes heroAIGradient {
-  0%   { background-position: 0% 40%; }
-  100% { background-position: 100% 60%; }
-}
-
-@keyframes heroAIGlitch1 {
+/* ===== мягкая плазменная волна ===== */
+@keyframes quantumWave {
   0% {
-    opacity: 0;
-    transform: translate(0, 0);
-    clip-path: inset(0 0 0 0);
+    text-shadow:
+      0 0 8px rgba(34, 255, 229, 0.3),
+      0 0 18px rgba(34, 255, 229, 0.2);
+    letter-spacing: -0.02em;
   }
-  30% {
-    opacity: 1;
-    transform: translate(-2px, -1px);
-    clip-path: inset(0 0 45% 0);
-  }
-  60% {
-    opacity: 1;
-    transform: translate(1px, 1px);
-    clip-path: inset(0 0 15% 0);
+  50% {
+    text-shadow:
+      0 0 16px rgba(34, 255, 229, 0.7),
+      0 0 28px rgba(34, 255, 229, 0.5);
+    letter-spacing: -0.012em;
   }
   100% {
-    opacity: 0;
-    transform: translate(0, 0);
-    clip-path: inset(0 0 0 0);
+    text-shadow:
+      0 0 8px rgba(34, 255, 229, 0.3),
+      0 0 18px rgba(34, 255, 229, 0.2);
+    letter-spacing: -0.02em;
   }
 }
 
-@keyframes heroAIGlitch2 {
+/* ===== микро-дрожь для всей фразы ===== */
+@keyframes quantumJitter {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(0.4px, -0.4px) rotate(-0.03deg); }
+  100% { transform: translate(0, 0); }
+}
+
+/* ===== пульсация AI-сегмента ===== */
+@keyframes aiCorePulse {
   0% {
-    opacity: 0;
-    transform: translate(0, 0);
-    clip-path: inset(0 0 0 0);
+    text-shadow:
+      0 0 12px rgba(34, 255, 229, 0.65),
+      0 0 26px rgba(34, 255, 229, 0.45);
   }
-  30% {
-    opacity: 1;
-    transform: translate(2px, 1px);
-    clip-path: inset(55% 0 0 0);
-  }
-  60% {
-    opacity: 1;
-    transform: translate(-1px, -2px);
-    clip-path: inset(80% 0 0 0);
+  50% {
+    text-shadow:
+      0 0 22px rgba(34, 255, 229, 0.95),
+      0 0 42px rgba(34, 255, 229, 0.75),
+      0 0 66px rgba(34, 255, 229, 0.45);
   }
   100% {
-    opacity: 0;
-    transform: translate(0, 0);
-    clip-path: inset(0 0 0 0);
+    text-shadow:
+      0 0 12px rgba(34, 255, 229, 0.65),
+      0 0 26px rgba(34, 255, 229, 0.45);
   }
 }
 
+/* ===== микро-дрожь для AI ядра (чуть интенсивнее) ===== */
+@keyframes aiCoreJitter {
+  0%   { transform: translate(0, 0); }
+  33%  { transform: translate(-0.3px, 0.4px) rotate(0.04deg); }
+  66%  { transform: translate(0.4px, -0.3px) rotate(-0.03deg); }
+  100% { transform: translate(0, 0); }
+}
