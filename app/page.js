@@ -1,8 +1,8 @@
 "use client";
 
-import MetricsStrip from "./components/MetricsStrip";
 import { useEffect } from "react";
 import Hero from "./components/Hero";
+import MetricsStrip from "./components/MetricsStrip"; // <-- ВАЖНО
 import WhyNow from "./components/WhyNow";
 import Pillars from "./components/Pillars";
 import Architecture from "./components/Architecture";
@@ -33,6 +33,7 @@ export default function Page() {
   return (
     <>
       <Hero />
+      <MetricsStrip /> {/* <-- ВОТ СЮДА! */}
       <WhyNow />
       <Pillars />
       <Architecture />
