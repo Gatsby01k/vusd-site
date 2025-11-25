@@ -1,3 +1,5 @@
+import { roadmap } from "../content/architecture";
+
 export default function Architecture() {
   return (
     <section id="architecture" className="section reveal">
