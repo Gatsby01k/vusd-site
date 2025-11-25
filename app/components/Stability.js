@@ -14,8 +14,12 @@ export default function Stability() {
             <div className="card-title">Collateral &amp; peg design</div>
             <ul className="card-list">
               <li>• Overcollateralized baskets with clear quality and liquidity tiers.</li>
-              <li>• Real-time health scoring: volatility, depth, correlation, regime shifts.</li>
-              <li>• Stress-test driven limits on exposure to any asset, sector or venue.</li>
+              <li>
+                • Real-time health scoring: volatility, depth, correlation, regime shifts.
+              </li>
+              <li>
+                • Stress-test driven limits on exposure to any asset, sector or venue.
+              </li>
             </ul>
           </div>
 
@@ -24,7 +28,9 @@ export default function Stability() {
             <ul className="card-list">
               <li>• Adjusts haircuts, fees, mint/burn curves and liquidity incentives.</li>
               <li>• Optimizes for long-horizon peg stability, not short-term yield.</li>
-              <li>• Emits signed recommendations that must fit on-chain constraint templates.</li>
+              <li>
+                • Emits signed recommendations that must fit on-chain constraint templates.
+              </li>
             </ul>
           </div>
         </div>
